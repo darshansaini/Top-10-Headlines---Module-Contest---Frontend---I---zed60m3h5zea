@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import '../styles/App.css';
 
 const posts= (category)=>{
-  const API_KEY="a1741280db6dbc554c889a31544851b7"
+  const API_KEY="3bd1fae25b30e7ad1eed316ad2a3a0c4"
   let url=`https://gnews.io/api/v4/top-headlines?category=${category}&apikey=${API_KEY}&max=10&lang=en`;
   return fetch(url)
 }
@@ -41,7 +41,7 @@ const App = () => {
       {loading && <p className='loader'>Loading...</p>}
       {!loading &&
       <ol>
-        {newsData.map((item,index)=>{
+        {newsData.map((item,index) => {
           return(
         <li key={index}>
           <img className='news-img' src={item.image} alt="randomimg"/>
